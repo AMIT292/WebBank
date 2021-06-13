@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Customer table</title>
+{% endblock title %}
+
+{% block content %}
+    
+    <div class="container mt-3">
+        <h2 class="text-center alert alert-danger">Customer List </h2>
+        
+        <table class="table">
+            <thead>
+                <tr align="center">
+                    <th>Account No.</th>
+                    <th>Account Holder</th>
+                    <th>Email ID</th>
+                    <th>Account Balance</th>
+                    <th>Transfer</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for c in customer %} 
+                <tr align="center">
+                    <td>{{ c.acc_no }}</td>
+                    <td>{{ c.acc_holder  }}</td>
+                    <td>{{ c.email_id }}</td>
+                    <td>{{ c.current_balance }}</td>
+                    <td><a href="{% url 'Trans' c.acc_no %}" class="btn btn-primary "> Transfer</a></td>
+                </tr>
+                
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <br>
+{% endblock content %}

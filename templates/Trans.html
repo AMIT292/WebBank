@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Transactions</title>
+{% endblock title %}
+
+{% block content %}
+<div class="row">  
+    <div class="col-sm-4 px-5">
+        <h1>Sender : {{acc_no}}</h1>
+        <br>
+        <br>
+        {% for particular_cust in particular_cust%}
+        
+        <h2> Account holder : {{particular_cust.acc_holder}}</h2>
+        <h2> E-mail : {{particular_cust.email_id}}</h2>
+        <h2> Balance : {{particular_cust.current_balance}}</h2>
+        
+        {% endfor %} 
+        
+</div> 
+<div class="col-sm-8 px-5">
+    <h1>Reciever Details</h1>
+    <br>
+    <br>
+    <form method="POST" action="/first/formop/">{% csrf_token %}
+        <div class="form-group">
+          <label for="formGroupExampleInput">Transfer To: </label>
+          <input type="hidden" class="form-control" id="sender_acc_no" name="sender_acc_no" value={{acc_no}} >
+          <input type="text" class="form-control" id="recv_acc_no" name="recv_acc_no" placeholder="Enter the Reciever's Account Number">
+          {%if flag1 %}
+        <div class="alert alert-danger" role="alert">
+          Cant Transfer into same account!!!!
+        </div>
+        {%endif%}
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput2">Enter the Amount</label>
+          <input type="text" class="form-control" id="amt_to_transfer" name="amt_to_transfer" placeholder="Enter the amount you want to transfer">
+        </div>
+        {%if flag %}
+        <div class="alert alert-danger" role="alert">
+          Insufficient Balance!!!!
+        </div>
+        {%endif%}
+        
+        
+        <input class='btn btn-success' type="Submit" value="ok" >
+        
+        
+      </form>
+     
+</div> 
+</div>
+{% endblock content %}
