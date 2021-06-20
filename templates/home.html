@@ -5,8 +5,45 @@
 {% endblock title %}
 
 {% block content %}
+<div id="bg" >
+    <div align='center' >
+        
+        <h1 style="font-family: 'Cinzel', serif;">Welcome to India Bank </h1>
+        
+        <div class="container mt-5" >
+
+            <div class="row" >
     
-    <div align='center'>
-        <h1>Home page</h1>
-    <img src="{% static 'money.png'%}" alt="Image bank"  style="height: 560px;width:max-content"></div>
+            
+                
+        
+                <div class="container col-sm-4 " style="padding: 200px 0;" align='center'>
+            
+                <a class="btn btn-info" href="CustTable" style="font-size: 25px;">ALL CUSTOMER LIST</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <br><br>
+    <p class="d-inline-flex p-2 px-5"align="center">Email   : indiabankhelp@gmail.com<br>
+        Contact : +91 12345 67890</p>
+</div>
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Pacifico&display=swap');
+#bg{
+    background-repeat: no-repeat;
+    
+    background-image: url('{% static "img12.jpg"%}');
+    background-size: cover;
+    background-position: center;
+    
+    
+    }
+
+    </style>
+   
+    
 {% endblock content %}

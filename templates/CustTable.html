@@ -1,15 +1,37 @@
 {% extends 'base.html' %}
+{% load static%}
 {% block title %}
     <title>Customer table</title>
 {% endblock title %}
 
 {% block content %}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Pacifico&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,500&display=swap');
+body{
+    background-repeat: no-repeat;
     
-    <div class="container mt-3">
-        <h2 class="text-center alert alert-danger">Customer List </h2>
+    background-image: url('{% static "img14.jfif"%}');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    
+    }
+    table{
+        opacity: 0.8;
+    }
+
+    </style>
+    <br>
+    <br>
+    <br>
+    <div id="bg">
+    <div class="container ">
+        <h2 class="text-center alert alert-primary" style="font-family: 'Alegreya', serif;">Customer List </h2>
         
-        <table class="table">
-            <thead>
+        <table class="table table-bordered table-hover bg-white">
+            <thead class="thead-dark">
                 <tr align="center">
                     <th>Account No.</th>
                     <th>Account Holder</th>
@@ -19,7 +41,7 @@
                 </tr>
             </thead>
 
-            <tbody>
+            <tbody style="font-weight: 600;">
                 {% for c in customer %} 
                 <tr align="center">
                     <td>{{ c.acc_no }}</td>
@@ -35,4 +57,6 @@
     </div>
     <br>
     <br>
+</div>
+    
 {% endblock content %}

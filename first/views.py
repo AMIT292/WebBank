@@ -45,7 +45,7 @@ def form_input(request):
     
     v_deb=v7-v2
     #print(v_deb)
-    if (v1 != v5):
+    if (v1 != v5 and v2!=0):
         flag1=0
         if v_deb<0:
             particular_cust=Customer.objects.filter(acc_no=v5)

@@ -4,8 +4,12 @@
 {% endblock title %}
 
 {% block content %}
-<div class="row">  
+
+<div class="row container">  
     <div class="col-sm-4 px-5">
+      <br>
+      <br>
+      <br>
         <h1>Sender : {{acc_no}}</h1>
         <br>
         <br>
@@ -18,12 +22,16 @@
         {% endfor %} 
         
 </div> 
-<div class="col-sm-8 px-5">
+<div class="col-sm-8 " style="padding-left: 100px;">
+  <br>
+          <br>
+          <br>
     <h1>Reciever Details</h1>
     <br>
     <br>
-    <form method="POST" action="/first/formop/">{% csrf_token %}
+    <form method="POST" action="/formop/">{% csrf_token %}
         <div class="form-group">
+          
           <label for="formGroupExampleInput">Transfer To: </label>
           <input type="hidden" class="form-control" id="sender_acc_no" name="sender_acc_no" value={{acc_no}} >
           <input type="text" class="form-control" id="recv_acc_no" name="recv_acc_no" placeholder="Enter the Reciever's Account Number">
@@ -51,4 +59,5 @@
      
 </div> 
 </div>
+
 {% endblock content %}

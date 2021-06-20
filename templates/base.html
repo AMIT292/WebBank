@@ -13,9 +13,13 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-    
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">India Bank</a>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+    </style>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top " >
+      <img src="{% static '2.png' %}" style="width: 40px;">
+        <a class="navbar-brand" href="#" style="font-family: 'Pacifico', cursive;font-size:25px;">&nbsp; India Bank</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -25,12 +29,12 @@
             <li class="nav-item active">
               <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'CustTable' %}">View all Customers</a>
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'CustTable' %}">View all Customers<span class="sr-only">(current)</span></a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'Transaction1' %}">Transaction History</a>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'Transaction1' %}">Transaction History<span class="sr-only">(current)</span></a>
               </li>
             
           </ul>
@@ -45,15 +49,17 @@
       {% endblock content%}
       
       <!-- Footer -->
-<footer class="page-footer font-small blue fixed-bottom">
+      <div>
+<footer class="page-footer font-small blue fixed-bottom ">
 
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3 bg-dark text-white">© 2021 Copyright:
+    <div class="footer-copyright text-center py-3 bg-dark text-white ">© 2021 Copyright:
       <a href="#"> IndiaBank.com</a>
     </div>
     <!-- Copyright -->
   
   </footer>
+</div>
   <!-- Footer -->
     
 </body>
